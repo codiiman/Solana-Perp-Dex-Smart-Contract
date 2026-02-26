@@ -1,0 +1,23 @@
+[package]
+name = "solana-perp-dex-smart-contract"
+version = "0.1.0"
+description = "Production-grade Solana perpetual DEX smart contract inspired by Drift Protocol V2"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "solana_perp_dex_smart_contract"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.30.1"
+anchor-spl = "0.30.1"
+solana-program = "~1.18.0"
+bytemuck = { version = "1.14", features = ["derive"] }
+thiserror = "1.0"
